@@ -1,10 +1,8 @@
 {
-    "not": {
-        "Omission bias": "the things to do what",
-        "Gambler Falicy": "when you're dumb" 
-    },
-    "used": {
-
-    }
-
+  "not": [
+    "Gambler Falicy",
+    "Omission bias",
+    "hey"
+  ],
+  "used": []
 }

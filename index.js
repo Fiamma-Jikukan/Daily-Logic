@@ -2,18 +2,32 @@ const fs = require('fs')
 // const config = require('./db.json');
 // console.log(config);
 
-const dbString = fs.readFile('./db.json', { encoding: 'utf-8' }, (err, jsonString) => {
-    if (err) {
-        console.log(err);
-    }
-    else {
-        const db = JSON.parse(jsonString)
-    }
-})
+const db = JSON.parse(fs.readFileSync('./db.json', { encoding: 'utf-8' }));
 
 
-const transfer = (db) => {
-    return "this is db"
+const transfer = (theDatabase) => {
+    if (theDatabase["not"].length === 0) {
+        console.log("crap");
+        theDatabase["not"] = [...theDatabase["used"]]
+        theDatabase["used"] = []
+        console.log(theDatabase);
+        const theNewOne = JSON.stringify(theDatabase, null, 2)
+        fs.writeFileSync('./db.json', theNewOne)
+        return;
+    }
+    randomNum = Math.floor(Math.random() * theDatabase["not"].length)
+    itemOfTheDay = theDatabase["not"][randomNum]
+    console.log(itemOfTheDay);
+
+    theDatabase["used"].push(itemOfTheDay)
+    theDatabase["not"].splice(randomNum, 1)
+    // theDatabase["not"].splice(((item) => item !== itemOfTheDay))
+    const theNewOne = JSON.stringify(theDatabase, null, 2)
+
+    // console.log(theNewOne);
+    fs.writeFileSync('./db.json', theNewOne)
+    return;
+
 }
 
-// console.log(transfer("g"));
+transfer(db);
