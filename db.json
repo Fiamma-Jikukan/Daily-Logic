@@ -47,7 +47,6 @@
     "Strawman",
     "Circular Reasoning",
     "Appeal to Nature",
-    "Composition Fallacy",
     "Division Fallacy",
     "Affirming the Consequent",
     "Anecdotal Fallacy",
@@ -110,6 +109,7 @@
     "Etymological Fallacy",
     "Appeal to Authority",
     "Ecological Fallacy",
-    "Pygmalion Effect"
+    "Pygmalion Effect",
+    "Composition Fallacy"
   ]
 }
